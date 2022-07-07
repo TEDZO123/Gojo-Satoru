@@ -3673,8 +3673,12 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                 GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c15f725add0381fb69c4b.jpg' }, caption: `*Hi Bro ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
             }
             break
-            case 'sc': case 'script': {
-                reply(`${myweb}`)
+case 'donasi': case 'donate': case 'sewabot': case 'sewa': {
+                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c15f725add0381fb69c4b.jpg' }, caption: `*Hi Bro ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
+            }
+            break
+case 'tedzo': {
+                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/1c9c11bd11d04facd4190.jpg' }, caption: `*Hi Bro ${m.pushName}*\nHEY IAM TEDZO SIR BOT 🥲💔\nMY OWNR IS AZLU SER` }, { quoted: m })
             }
             break
 case 'allmenu': {
@@ -3689,6 +3693,7 @@ case 'allmenu': {
 ┃╠ ${prefix}ping
 ┃╠ ${prefix}owner
 ┃╠ ${prefix}menu
+┃╠ ${prefix}addvn
 ┃╠ ${prefix}delete
 ┃╠ ${prefix}chatinfo
 ┃╠ ${prefix}quoted
@@ -3927,6 +3932,7 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠ ${prefix}ping
 ┃╠ ${prefix}owner
 ┃╠ ${prefix}menu
+┃╠ ${prefix}addvn
 ┃╠ ${prefix}delete
 ┃╠ ${prefix}chatinfo
 ┃╠ ${prefix}quoted
