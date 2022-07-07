@@ -703,8 +703,6 @@ if (q.includes('--help')) return reply(examkosong)
  }
  break
 case 'welcome': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
 if (!isBotAdmins) return replay(mess.botAdmin)
 if (!isAdmins && !isCreator) return replay(mess.admin)
@@ -1476,7 +1474,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 break
       case 'addvn':
       case 'addbgm':
-                    if (!isOwner) return 
+                    if (isCreator) return 
 					if (!isQuotedAudio) return reply('*Reply to Audio*')
 					nm = body.slice(7)
 					if (!nm) return reply('*What is The bgm name?*')
@@ -3673,12 +3671,8 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                 GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c15f725add0381fb69c4b.jpg' }, caption: `*Hi Bro ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
             }
             break
-case 'donasi': case 'donate': case 'sewabot': case 'sewa': {
-                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c15f725add0381fb69c4b.jpg' }, caption: `*Hi Bro ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
-            }
-            break
-case 'tedzo': {
-                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/1c9c11bd11d04facd4190.jpg' }, caption: `*Hi Bro ${m.pushName}*\nHEY IAM TEDZO SIR BOT 🥲💔\nMY OWNR IS AZLU SER` }, { quoted: m })
+            case 'sc': case 'script': {
+                reply(`${myweb}`)
             }
             break
 case 'allmenu': {
@@ -3693,7 +3687,6 @@ case 'allmenu': {
 ┃╠ ${prefix}ping
 ┃╠ ${prefix}owner
 ┃╠ ${prefix}menu
-┃╠ ${prefix}addvn
 ┃╠ ${prefix}delete
 ┃╠ ${prefix}chatinfo
 ┃╠ ${prefix}quoted
@@ -3932,7 +3925,6 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠ ${prefix}ping
 ┃╠ ${prefix}owner
 ┃╠ ${prefix}menu
-┃╠ ${prefix}addvn
 ┃╠ ${prefix}delete
 ┃╠ ${prefix}chatinfo
 ┃╠ ${prefix}quoted
