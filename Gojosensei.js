@@ -202,11 +202,11 @@ module.exports = GojoMdNx = async (GojoMdNx, m, chatUpdate, store) => {
 	
 	//group target \\
 const reply = (teks) => {
-            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Gojo-Satoru`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg"}}}, { quoted: m})
+            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Gojo-Satoru`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://telegra.ph/file/d213441e717bf00bad0dc.jpg"}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Gojo-Satoru`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg"}}}, { quoted: m})
+            GojoMdNx.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` Gojo-Satoru`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://telegra.ph/file/d213441e717bf00bad0dc.jpg"}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -3438,12 +3438,13 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./GojoMedia/gojo.jpg')}, 
                             hydratedFooterText: `
- ┌─❖
- │「 Hi 👋 」
- └┬❖ 「 ${pushname} 」
-│ 🤍│
-┌┤✑  *TEDZO MENU*
-│└───────────────┈ ⳹
+┏━「 *${botname}* 」━━⭓
+│ 
+│「 Hi 👋 」
+│ 「 ${pushname} 」
+│ 
+│             ✑  *TEDZO MENU*
+│
 │ 「 *BOT INFO* 」
 │✙ 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
 │
@@ -3459,9 +3460,8 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 │
 │✙ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
 │
-└┬──────────────┈ ⳹
-   │✑  Please Select The Button Below
-   └───────────────┈ ⳹`,
+│✑  Please Select The Button Below
+└───────────────┈ ⳹`,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: 'TG 🗃️',
