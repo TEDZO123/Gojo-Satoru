@@ -702,6 +702,30 @@ if (q.includes('--help')) return reply(examkosong)
   } else { reply("Incorrect Format!") }
  }
  break
+case 'welcome': {
+   if (isBan) return reply(mess.ban)	 			
+if (isBanChat) return reply(mess.banChat)
+if (!m.isGroup) return replay(mess.group)
+if (!isBotAdmins) return replay(mess.botAdmin)
+if (!isAdmins && !isCreator) return replay(mess.admin)
+if (args[0] === "on") {
+if (welcm) return replay('Already activated')
+wlcm.push(from)
+replay('Success in turning on the welcome/left msg in this group')
+} else if (args[0] === "off") {
+if (!welcm) return replay('Already deactivated')
+let off = wlcm.indexOf(from)
+wlcm.splice(off, 1)
+replay('Success in turning off welcome/left msg in this group')
+} else {
+  let buttonswlcm = [
+  { buttonId: `${command} on`, buttonText: { displayText: 'On' }, type: 1 },
+  { buttonId: `${command} off`, buttonText: { displayText: 'Off' }, type: 1 }
+  ]
+  await GojoMdNx.sendButtonText(m.chat, buttonswlcm, `Please click the button below\n\nOn to enable\nOff to disable`, `${global.botname}`, m)
+  }
+  }
+  break
  case 'sel': case 'jual':{
  if (!q) return  reply(`What Do You Want To Sell??\nExample : ${prefix + command} fish 2`)
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
@@ -1450,7 +1474,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                 reply(mess.success)
                 }
                 break
-                   case 'addvn':
+      case 'addvn':
       case 'addbgm':
                     if (!isOwner) return 
 					if (!isQuotedAudio) return reply('*Reply to Audio*')
@@ -1469,7 +1493,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
 					 wanu = vien.indexOf(nmm)
 					 vien.splice(wanu, 1)
 					 fs.unlinkSync(`./GojoMedia/vn/${nmm}.mp3`)
-					GojoMdNx.sendMessage(from, `*Bgm Deleted*`, MessageType.text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: 'status@broadcast' } : {})}, message: { orderMessage: { itemCount: 59, status: 200, thumbnail: fs.readFileSync('.GojoMedia/gojo.jpg'), surface: 200, message: '𝒑𝒆𝒑𝒆', orderTitle: '𝒔𝒆𝒓', sellerJid: '0@s.whatsapp.net'}}}, contextInfo: { forwardingScore: 508, isForwarded: true}})
+					GojoMdNx.sendMessage(from, `*Bgm Deleted*`, MessageType.text, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: 'status@broadcast' } : {})}, message: { orderMessage: { itemCount: 59, status: 200, thumbnail: fs.readFileSync('.GojoMedia/gojo.jpg'), surface: 200, message: '𝒑𝒆𝒑gg𝒆', orderTitle: '𝒔𝒆𝒓', sellerJid: '0@s.whatsapp.net'}}}, contextInfo: { forwardingScore: 508, isForwarded: true}})
 					} catch (err){
 						console.log(err)
 						reply(mess.error.api)
